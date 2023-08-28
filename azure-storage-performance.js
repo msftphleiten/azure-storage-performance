@@ -6,30 +6,36 @@ function displayPerformance() {
     IOPS_Burst = Math.min(Math.max(10000, 3 * GiB), 100000);
     Throughput = 100 + Math.ceil(0.04 * GiB) + Math.ceil(0.06 * GiB);
 
-    var newTable = "<table border='1'>";
-    
-    newTable += "<tr>";
-    newTable += "<td>GiB</td>";
-    newTable += "<td class='alnright'>" + GiB + "</td>";
-    newTable += "</tr>";
+    if (GiB >= 100) {
 
-    newTable += "<tr>";
-    newTable += "<td>Max. IOPS</td>";
-    newTable += "<td class='alnright'>" + IOPS + "</td>";
-    newTable += "</tr>";
-    
-    newTable += "<tr>";
-    newTable += "<td>Max. IOPS Burst</td>";
-    newTable += "<td class='alnright'>" + IOPS_Burst + "</td>";
-    newTable += "</tr>";
+        var newTable = "<table border='1'>";
+        
+        newTable += "<tr>";
+        newTable += "<td>GiB</td>";
+        newTable += "<td class='alnright'>" + GiB + "</td>";
+        newTable += "</tr>";
 
-    newTable += "<tr>";
-    newTable += "<td>Max. Throughput</td>";
-    newTable += "<td class='alnright'>" + Throughput + "</td>";
-    newTable += "</tr>";
+        newTable += "<tr>";
+        newTable += "<td>Max. IOPS</td>";
+        newTable += "<td class='alnright'>" + IOPS + "</td>";
+        newTable += "</tr>";
+        
+        newTable += "<tr>";
+        newTable += "<td>Max. IOPS Burst</td>";
+        newTable += "<td class='alnright'>" + IOPS_Burst + "</td>";
+        newTable += "</tr>";
 
-    newTable += "</table>";
+        newTable += "<tr>";
+        newTable += "<td>Max. Throughput</td>";
+        newTable += "<td class='alnright'>" + Throughput + "</td>";
+        newTable += "</tr>";
 
-    document.getElementById("idCalculation").innerHTML = newTable;
+        newTable += "</table>";
+
+        document.getElementById("idCalculation").innerHTML = newTable;
+    }
+    else {
+        document.getElementById("idCalculation").innerHTML = "<br>Miminum File Share Size is 100 GiB"
+    }
     
 }
