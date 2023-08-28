@@ -6,7 +6,7 @@ function displayPerformance() {
     IOPS_Burst = Math.min(Math.max(10000, 3 * GiB), 100000);
     Throughput = 100 + Math.ceil(0.04 * GiB) + Math.ceil(0.06 * GiB);
 
-    if (GiB >= 100) {
+    if (GiB >= 100 && GiB <= 100000) {
 
         var newTable = "<table border='1'>";
         
@@ -35,7 +35,7 @@ function displayPerformance() {
         document.getElementById("idCalculation").innerHTML = newTable;
     }
     else {
-        document.getElementById("idCalculation").innerHTML = "<br>Miminum File Share Size is 100 GiB"
+        document.getElementById("idCalculation").innerHTML = "<br>Miminum File Share Size is 100 GiB<br>Maximum File Share Size is 100 TiB"
     }
     
 }
