@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <title>
+        Azure Files Storage Performance Calcualtor
+    </title>
+
+    <link rel="stylesheet" href="azure-storage-performance.css">
+    <script type="text/javascript" src="azure-storage-performance.js"></script>
+    <meta name="author" content="Philipp Leitenbauer, phleiten@microsoft.com">
+    </head>
+    
+    <body>
+    <h1>Azure Storage Performance Calculator</h1>
+    <p>v0.1 - August 28 2023<br></p>
+
+    
+    
+    <br>
+    <br>
+    This page automatically calculates the performance of an Azure Files Premium NFS share by providing the configured size:<br>
+    <br>
+    Enter NFS share size in GiB:
+    <input type="number" id="id_GiB" name="GiB" value="1000">
+    <input type="button" id="id_OK" name="OK" value="OK" onclick="displayPerformance()">
+
+    <h2 class="top15" id="titleCalculation" >Calculation:</h2>
+    <p id="idCalculation">
+    <br>
+    <br>
+    </p>
+
+
+    </body>
+
+</html>
