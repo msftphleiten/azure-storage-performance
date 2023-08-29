@@ -26,6 +26,11 @@ function displayPerformance() {
         newTable += "</tr>";
 
         newTable += "<tr>";
+        newTable += "<td>Burst Credits</td>";
+        newTable += "<td class='alnright'>" + ((IOPS_Burst - IOPS) * 3600) + "</td>";
+        newTable += "</tr>";
+
+        newTable += "<tr>";
         newTable += "<td>Max. Throughput</td>";
         newTable += "<td class='alnright'>" + Throughput + "</td>";
         newTable += "</tr>";
