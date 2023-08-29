@@ -2,7 +2,7 @@ function displayPerformance() {
 
     GiB = document.getElementById("id_GiB").value;
 
-    IOPS = 3000 + 1 * GiB;
+    IOPS = Math.min(3000 + 1 * GiB, 100000);
     IOPS_Burst = Math.min(Math.max(10000, 3 * GiB), 100000);
     Throughput = 100 + Math.ceil(0.04 * GiB) + Math.ceil(0.06 * GiB);
 
